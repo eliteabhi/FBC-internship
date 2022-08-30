@@ -1,0 +1,319 @@
+<div class="container d-flex justify-content-center">
+
+  <form [formGroup]="infoForm">
+
+    <div class="content">
+
+      <div class="juvenileInfo input-group mb-2">
+          <input
+            class="form-control"
+            placeholder="First Name"
+            aria-label="First Name"
+            aria-describedby="basic-addon1"
+            type="text"
+            name="juvenileFirstName"
+            formControlName="juvenileFirstName" required>
+          <input
+            class="form-control"
+            placeholder="Last Name"
+            aria-label="Last Name"
+            aria-describedby="basic-addon1"
+            type="text"
+            name="juvenileLastName"
+            formControlName="juvenileLastName" required>
+      </div>
+
+      <br>
+
+      <div class="surveyAnswer p-3 text-center d-flex flex-column justify-content-center">
+        <div class="surveyText">
+          <h5>Take survey?</h5>
+        </div>
+        <div class="answer">
+          <input style="background-color: rgba(255, 255, 255, 0.9);" class="btn" value="Yes" type="button" (click)="Yes()">
+          &#160;
+          <input style="background-color: rgba(255, 255, 255, 0.9);" class="btn" value="No" type="button" (click)="onSubmit()" routerLink="completion"  routerLinkActive="active">
+        </div>
+      </div>
+
+      <br>
+
+      <div class="supplimentoryInfo" *ngIf="surveyAnswer === 'Yes'">
+        <app-api-interace></app-api-interace>
+        <div class="guardiansTable input-group">
+          <table formArrayName="gaurdians">
+            <tr>
+              <th aria-colspan="2" class="supplimentoryHeader">Guardians:
+                <input
+                  class="btn shadow-0"
+                  value="➕"
+                  type="button"
+                  (click)="addMember('gaurdians')">
+              </th>
+            </tr>
+            <tr [formGroupName]="0">
+              <span class="guardian">
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="Guardian First Name"
+                    aria-label="Guardian First Name"
+                    aria-describedby="basic-addon1"
+                    type="text"
+                    formControlName="gaurdianFirstName">
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="Guardian Last Name"
+                    aria-label="Guardian Last Name"
+                    aria-describedby="basic-addon1"
+                    type="text"
+                    formControlName="gaurdianLastName">
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="johnDoe@email.com"
+                    aria-label="Email"
+                    aria-describedby="basic-addon1"
+                    type="email"
+                    formControlName="gaurdianEmail">
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="1235551234"
+                    aria-label="Phone"
+                    aria-describedby="basic-addon"
+                    type="tel"
+                    formControlName="gaurdianPhone">
+                </td>
+              </span>
+            </tr>
+            <tr *ngFor="let guardian of getAsFormArray('gaurdians').controls | slice:1;
+                let index = index" [formGroupName]="index">
+              <span class="guardian">
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="Guardian First Name"
+                    aria-label="Guardian First Name"
+                    aria-describedby="basic-addon1"
+                    type="text"
+                    formControlName="gaurdianFirstName">
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="Guardian Last Name"
+                    aria-label="Guardian Last Name"
+                    aria-describedby="basic-addon1"
+                    type="text"
+                    formControlName="gaurdianLastName">
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="johnDoe@email.com"
+                    aria-label="Email"
+                    aria-describedby="basic-addon1"
+                    type="email"
+                    formControlName="gaurdianEmail">
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="1235551234"
+                    aria-label="Phone"
+                    aria-describedby="basic-addon"
+                    type="tel"
+                    formControlName="gaurdianPhone">
+                </td>
+                <td>
+                  <input class="btn shadow-0" value="❌" type="button" (click)="removeMember('gaurdians', index)">
+                </td>
+              </span>
+            </tr>
+          </table>
+        </div>
+
+        <br>
+
+        <div class="interviewersTable">
+          <table formArrayName="interviewers">
+            <tr>
+              <th aria-colspan="2" class="supplimentoryHeader">Interviewers:
+                <input
+                  class="btn shadow-0"
+                  value="➕"
+                  type="button"
+                  (click)="addMember('interviewers')">
+              </th>
+            </tr>
+            <tr [formGroupName]="0">
+              <span class="interviewer">
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="Interviewer First Name"
+                    aria-label="Interviewer First Name"
+                    aria-describedby="basic-addon"
+                    type="text"
+                    formControlName="interviewerFirstName">
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="Interviewer Last Name"
+                    aria-label="Interviewer Last Name"
+                    aria-describedby="basic-addon"
+                    type="text"
+                    formControlName="interviewerLastName">
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="johnDoe@email.com"
+                    aria-label="Interviewer Email"
+                    aria-describedby="basic-addon"
+                    type="email"
+                    formControlName="interviewerEmail">
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="1235551234"
+                    aria-label="Interviewer phone"
+                    aria-describedby="basic-addon"
+                    type="tel"
+                    formControlName="interviewerPhone">
+                </td>
+              </span>
+            </tr>
+            <tr *ngFor="let guardian of getAsFormArray('interviewers').controls | slice:1;
+                let index = index" [formGroupName]="index">
+              <span class="interviewer">
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="Interviewer First Name"
+                    aria-label="Interviewer First Name"
+                    aria-describedby="basic-addon"
+                    type="text"
+                    formControlName="interviewerFirstName">
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="Interviewer Last Name"
+                    aria-label="Interviewer Last Name"
+                    aria-describedby="basic-addon"
+                    type="text"
+                    formControlName="interviewerLastName">
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="johnDoe@email.com"
+                    aria-label="Interviewer Email"
+                    aria-describedby="basic-addon"
+                    type="email"
+                    formControlName="interviewerEmail">
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="1235551234"
+                    aria-label="Interviewer First Name"
+                    aria-describedby="basic-addon"
+                    type="text"
+                    formControlName="interviewerPhone">
+                </td>
+                <td>
+                  <input class="btn shadow-0" value="❌" type="button" (click)="removeMember('interviewers', index)">
+                </td>
+              </span>
+            </tr>
+          </table>
+        </div>
+
+        <br>
+
+        <div class="additionalTable">
+          <table formArrayName="additional">
+            <tr>
+              <th aria-colspan="2" class="supplimentoryHeader">Additional People:
+                <input
+                  class="btn shadow-0"
+                  value="➕"
+                  type="button"
+                  (click)="addMember('additional')">
+              </th>
+            </tr>
+            <tr *ngFor="let guardian of getAsFormArray('additional').controls;
+                let index = index" [formGroupName]="index">
+              <span class="additional">
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="Additional First Name"
+                    aria-label="Additional First Name"
+                    aria-describedby="basic-addon"
+                    type="text"
+                    formControlName="additionalFirstName">
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="Additional Last name"
+                    aria-label="Additional Last Name"
+                    aria-describedby="basic-addon"
+                    type="text"
+                    formControlName="additionalLastName">
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="johnDoe@email.com"
+                    aria-label="Additional Email"
+                    aria-describedby="basic-addon"
+                    type="email"
+                    formControlName="additionalEmail">
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    placeholder="1235551234"
+                    aria-label="Additional First Name"
+                    aria-describedby="basic-addon"
+                    type="tel"
+                    formControlName="additionalPhone">
+                </td>
+                <td>
+                  <input class="btn shadow-0" value="❌" type="button" (click)="removeMember('additional', index)">
+                </td>
+              </span>
+            </tr>
+          </table>
+        </div>
+
+        <br>
+
+        <tr>
+          <input
+            class="btn hover-shadow"
+            title="Submit"
+            value="Submit"
+            type="button"
+            (click)="onSubmit()"
+            routerLink="survey"
+            routerLinkActive="active">
+        </tr>
+      </div>
+
+    </div>
+
+  </form>
+
+</div>

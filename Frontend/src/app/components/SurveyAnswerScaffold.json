@@ -1,0 +1,41 @@
+{
+    "juvenileFirstName": "",
+    "juvenileLastName": "",
+    "surveyId": 1,
+    "surveyAnswer": "",
+    "userCreated": "Survey",
+    "additionalPeople": [
+      {
+        "additionalFirstName": "",
+        "additionalLastName": "",
+        "additionalEmail": "",
+        "additionalPhone": 0,
+        "userCreated": "Survey"
+      }
+    ],
+    "gaurdians": [
+        {
+            "gaurdianFirstName": "",
+            "gaurdianLastName": "",
+            "gaurdianEmail": "",
+            "gaurdianPhone": 0
+        }
+    ],
+    "interviewers": [
+        {
+            "interviewerFirstName": "",
+            "interviewerLastName": "",
+            "interviewerEmail": "",
+            "interviewerPhone": 0,
+            "userCreated": "Survey"
+        }
+    ],
+    "qAndA": [
+        {
+            "surveyId": 1,
+            "questionId": 1,
+            "answer": "",
+            "userCreated": "Survey"
+        }
+    ]
+}

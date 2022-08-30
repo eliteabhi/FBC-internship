@@ -1,0 +1,68 @@
+table {
+
+  justify-items: self-start;
+
+}
+
+.container {
+
+  position: relative;
+  min-height: 80vh;
+
+}
+
+.content {
+
+  flex-shrink: 0;
+
+}
+
+.juvenileInfo {
+
+  background-color: rgba(255,255,255,0.7);
+  flex-flow: wrap;
+  flex-grow: 0;
+  flex-basis: 40vh;
+  width: 100%;
+
+}
+
+.surveyText {
+
+  flex-wrap: wrap;
+
+}
+
+.surveyAnswer {
+
+  background-color: rgba(255, 255, 255, 0.7);
+
+}
+
+.supplimentoryInfo {
+
+  flex: auto;
+  justify-items: center;
+
+}
+
+.supplimentoryHeader {
+
+  flex-direction: column;
+  flex-flow: column;
+
+}
+
+.guardiansTable {
+
+  justify-items: space-evenly;
+  flex-direction: column;
+  flex: auto;
+
+}
+
+.supplimentoryInfo .btn {
+
+  height: 2em;
+
+}

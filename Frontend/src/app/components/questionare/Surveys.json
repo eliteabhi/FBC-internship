@@ -1,0 +1,135 @@
+[
+ {
+    "surveyId": 1,
+    "questions": [
+      {
+        "questionId": 1,
+        "isRestricted":
+        {
+          "answer": false,
+          "parentQuestionId": 0
+        }
+      },
+      {
+        "questionId": 2,
+        "isRestricted":
+        {
+          "answer": false,
+          "parentQuestionId": 0
+        }
+      },
+      {
+        "questionId": 3,
+        "isRestricted":
+        {
+          "answer": false,
+          "parentQuestionId": 0
+        }
+      },
+      {
+        "questionId": 4,
+        "isRestricted":
+        {
+          "answer": false,
+          "parentQuestionId": 0
+        }
+      },
+      {
+        "questionId": 5,
+        "isRestricted":
+        {
+          "answer": false,
+          "parentQuestionId": 0
+        }
+      },
+      {
+        "questionId": 6,
+        "isRestricted":
+        {
+          "answer": false,
+          "parentQuestionId": 0
+        }
+      },
+      {
+        "questionId": 7,
+        "isRestricted":
+        {
+          "answer": false,
+          "parentQuestionId": 0
+        }
+      },
+      {
+        "questionId": 8,
+        "isRestricted":
+        {
+          "answer": false,
+          "parentQuestionId": 0
+        }
+      },
+      {
+        "questionId": 9,
+        "isRestricted":
+        {
+          "answer": false,
+          "parentQuestionId": 0
+        }
+      },
+      {
+        "questionId": 10,
+        "isRestricted":
+        {
+          "answer": false,
+          "parentQuestionId": 0
+        }
+      },
+      {
+        "questionId": 11,
+        "isRestricted":
+        {
+          "answer": false,
+          "parentQuestionId": 0
+        }
+      },
+      {
+        "questionId": 12,
+        "isRestricted":
+        {
+          "answer": false,
+          "parentQuestionId": 0
+        }
+      },
+      {
+        "questionId": 13,
+        "isRestricted":
+        {
+          "answer": false,
+          "parentQuestionId": 0
+        }
+      },
+      {
+        "questionId": 14,
+        "isRestricted":
+        {
+          "answer": false,
+          "parentQuestionId": 0
+        }
+      },
+      {
+        "questionId": 15,
+        "isRestricted":
+        {
+          "answer": false,
+          "parentQuestionId": 0
+        }
+      },
+      {
+        "questionId": 16,
+        "isRestricted":
+        {
+          "answer": true,
+          "parentQuestionId": 15
+        }
+      }
+    ]
+  }
+]

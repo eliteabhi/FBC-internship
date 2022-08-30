@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="content">
+    <section class="p-4 border-bottom">
+      <h2>Survey</h2>
+    </section>
+    <app-api-interace></app-api-interace>
+    <section class="border-bottom pt-4">
+      <ol class="questions">
+        <div class="question" *ngFor="let item of questions; let last = last; let qNumber = index">
+          <li class="isHidden" *ngIf="!isRestricted(item.questionId) || parentAnswered(item.questionId)">
+              <div class="questionDesc">
+                {{item.questionDesc}}
+              </div>
+              <br>
+              <div class="answer pb-4">
+                <span class="p-1">
+                  <input type="radio" id="Yes" name="surveyAnswer{{item.questionId}}" (click) = "answer(item.questionId, 'Yes')">
+                  <label for="Yes">Yes</label>
+                </span>
+                <span class="p-1">
+                  <input type="radio" id="No" name="surveyAnswer{{item.questionId}}" (click) = "answer(item.questionId, 'No')">
+                  <Label for="No">No</Label>
+                </span>
+                <span class="p-1">
+                  <input type="radio" id="WNA" name="surveyAnswer{{item.questionId}}" (click) = "answer(item.questionId, 'WNA')">
+                  <label for="WNA">Will Not Answer</label>
+                </span>
+              </div>
+          </li>
+        </div>
+      </ol>
+    </section>
+    <section>
+      <div class="finishedSurvey p-4">
+        <h4>Finished?</h4>
+        <input
+          class="btn"
+          value="submit"
+          type="button"
+          (click) = "onSubmit()"
+          routerLink="/completion"
+          routerLinkActive="active">
+      </div>
+    </section>
+    <br>
+  </div>
+</div>
